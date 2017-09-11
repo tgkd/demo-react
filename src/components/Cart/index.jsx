@@ -4,13 +4,16 @@ import ContactForm from '../ContactForm'
 export default class extends React.Component {
   constructor(props) {
     super(props)
-    this.list = []
+    this.state = {
+      data: 'test',
+    }
+    this.submitForm = this.submitForm.bind(this)
   }
 
   submitForm(values) {
-    const val = this.list
-    console.log(val)
-    console.log(values)
+    this.setState({
+      data: values,
+    })
   }
 
   render() {
