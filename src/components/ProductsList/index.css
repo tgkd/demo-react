@@ -1,0 +1,6 @@
+.products-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 600px;
+}
