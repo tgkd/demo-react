@@ -1,0 +1,55 @@
+$placeholder_color = #22284e
+$form_bkg = #e6f0f9
+$form_border = #3a3d76
+$input_brd = #22284e
+
+.contact-form
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    width 400px
+    padding 15px
+    background-color $form_bkg
+    border solid 1px $form_border
+    border-radius 2px
+
+    &__name,
+    &__email,
+    &__phone
+        display flex
+        justify-content space-between
+        align-items center
+        width 350px
+        margin 10px 0
+        font-family 'Arvo', serif
+
+        & input
+            box-sizing border-box
+            height 30px
+            width 250px
+            border solid 1px $input_brd
+            padding 3px 7px
+            font-family 'Arvo', serif
+
+        & label
+            display none
+            color #f1f1f3
+
+        & span
+            display block
+            margin-top 5px
+            font-size 12px
+            color #e96f32
+
+::-webkit-input-placeholder 
+    color $placeholder_color
+
+::-moz-placeholder 
+    color $placeholder_color
+
+:-ms-input-placeholder 
+    color $placeholder_color
+
+:-moz-placeholder 
+    color $placeholder_color

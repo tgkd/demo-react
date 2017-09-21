@@ -2,7 +2,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
-import './index.css'
+import './index.styl'
 import ButtonSubmit from '../ButtonSubmit'
 
 const validate = values => {
@@ -34,9 +34,15 @@ let ContactForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit} className="contact-form">
-      <Field className="contact-form__name" name="name" type="text" component={renderField} label="Your name" />
-      <Field className="contact-form__email" name="email" type="email" component={renderField} label="Email" />
-      <Field className="contact-form__phone" name="phone" type="text" component={renderField} label="Phone" />
+      <div className="contact-form__name">
+        <Field name="name" type="text" component={renderField} label="Your name" />
+      </div>
+      <div className="contact-form__email">
+        <Field name="email" type="email" component={renderField} label="Email" />
+      </div>
+      <div className="contact-form__phone">
+        <Field name="phone" type="text" component={renderField} label="Phone" />
+      </div>
       <ButtonSubmit type="submit">Submit</ButtonSubmit>
     </form>
   )

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-did-mount-set-state,react/prop-types */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './index.css'
+import './index.styl'
 import Product from '../Product'
 import Button from '../Button/index'
 import ButtonAdd from '../ButtonAdd/index'
@@ -28,7 +28,7 @@ class ProductsList extends React.Component {
         return (
           <Product key={product.id} displayType={style}>
             {product.description}
-            <ButtonAdd>add to cart</ButtonAdd>
+            <ButtonAdd onClick="">add to cart</ButtonAdd>
           </Product>
         )
       })
@@ -48,8 +48,12 @@ class ProductsList extends React.Component {
     const productsGrid = this.getProductsGridTemplate()
     return (
       <div>
-        <Link to="/cart">go to cart</Link>
         <Button onClick={this.switchListStyle}>{this.state.productCardStyle}</Button>
+        <Link className="button-link" to="/cart">
+          <Button>
+            Cart { this.props.productsInCart }
+          </Button>
+        </Link>
         <div className="products-list">
           { productsGrid }
         </div>

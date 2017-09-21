@@ -10,7 +10,7 @@ const Product = styled.div`
   margin: 5px;
   height: ${(props) => (props.displayType === 'row' ? '40px' : '200px')};
   width: ${(props) => (props.displayType === 'row' ? '100%' : '150px')};
-  background-color: #009A31;
+  background-color: #3e966c;
   color: #fff;
 `
 export default Product

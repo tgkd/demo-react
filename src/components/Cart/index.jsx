@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactForm from '../ContactForm'
+import Calendar from '../Calendar'
 
 export default class extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ export default class extends React.Component {
     return (
       <div>
         <p>text</p>
+        <Calendar />
         <ContactForm onSubmit={this.submitForm} />
       </div>
     )
