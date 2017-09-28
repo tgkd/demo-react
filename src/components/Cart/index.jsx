@@ -1,13 +1,11 @@
+/* eslint-disable */
 import React from 'react'
 import ContactForm from '../ContactForm'
-import Calendar from '../Calendar'
+// import Calendar from '../Calendar'
 
 export default class extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      data: 'test',
-    }
     this.submitForm = this.submitForm.bind(this)
   }
 
@@ -20,8 +18,8 @@ export default class extends React.Component {
   render() {
     return (
       <div>
-        <p>text</p>
-        <Calendar />
+        <p>Your cart</p>
+        <CartList items={this.props.cartItems} />
         <ContactForm onSubmit={this.submitForm} />
       </div>
     )

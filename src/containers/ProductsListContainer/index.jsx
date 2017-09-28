@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import * as actions from '../../store/actionCreators/products'
 
 import ProductsList from '../../components/ProductsList'
+import Sidebar from '../../components/Sidebar'
 
 @connect(
   ({ products }) => ({ products }),
@@ -18,7 +19,10 @@ export default class extends Component {
     const { getProductsList, products } = this.props
 
     return (
-      <ProductsList products={products} getProductsList={getProductsList} />
+      <div>
+        <Sidebar />
+        <ProductsList products={products} getProductsList={getProductsList} />
+      </div>
     )
   }
 }

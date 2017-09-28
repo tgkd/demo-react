@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types,no-useless-constructor */
+/* eslint-disable */
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -10,7 +10,6 @@ import Cart from '../../components/Cart'
   ({ cartItems }) => ({ cartItems }),
   (dispatch) => bindActionCreators(actions, dispatch),
 )
-
 class CartContainer extends React.Component {
   constructor(props) {
     super(props)
