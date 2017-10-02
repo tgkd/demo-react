@@ -32,7 +32,6 @@ export default class Sidebar extends React.Component {
 
 
     clickHandler(event) {
-        console.log(event)
         this.setState({
             menuVisible: !this.state.menuVisible,
         })
@@ -40,11 +39,13 @@ export default class Sidebar extends React.Component {
 
     render() {
         const menuItems = this.getLinksListTemplate()
-        console.log(menuItems)
         return (
-            <div className="sidebar">
+            <div>
                 <div className="sidebar-btn" style={this.sidebarBtnStyle} onClick={this.clickHandler.bind(this)}> &#x2630; </div>
-                { this.state.menuVisible ? menuItems : null }
+                { this.state.menuVisible
+                    ? <div className="sidebar"> { menuItems } </div>
+                    : null
+                }
             </div>
         )
     }
