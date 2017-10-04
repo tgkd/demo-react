@@ -12,24 +12,24 @@ function getWeeks (calendar) {
       dayList.push(day)
     }
     return dayList.map((day) => {
-      return day.format('D')
+      return day.format('D-MM')
     })
   })
 }
 
-const getCalendarDaysTemplate = (weeks) => {
+const getCalendarDaysTemplate = (weeks, selectedDate) => {
   return weeks.map((week, weekId) => {
     return (
-      <div className="calendar-body__week" key={weekId}>
+      <div className="calendar-body__week" key={ weekId }>
         {
           week.map((day, dayId) => {
             return (
               <div
                 className={
-                  `calendar-body__day ${day === moment().format('D') ? 'calendar-body__day--today' : ''}`
+                  `calendar-body__day ${day === moment().format('D-MM') ? 'calendar-body__day--today' : ''}`
                 }
                 key={dayId}>
-                { day }
+                { day.split('-')[0] }
               </div>
             )
           })
