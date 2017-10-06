@@ -1,4 +1,4 @@
-/* eslint-disable react/no-did-mount-set-state,react/prop-types */
+/* eslint-disable react/no-did-mount-set-state,react/prop-types,react/jsx-no-bind */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './index.styl'
@@ -28,12 +28,16 @@ class ProductsList extends React.Component {
         return (
           <Product key={product.id} displayType={style}>
             {product.description}
-            <ButtonAdd onClick="">add to cart</ButtonAdd>
+            <ButtonAdd onClick={this.addToCart.bind(this, product.id)}>add</ButtonAdd>
           </Product>
         )
       })
     }
     return null
+  }
+
+  addToCart(id) {
+    this.props.addToCart(id)
   }
 
   switchListStyle() {

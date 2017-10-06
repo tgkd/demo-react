@@ -6,6 +6,6 @@ export default class Products {
   }
   static addNewProduct(newProduct) {
     info.productsList.push(newProduct)
-    return newProduct
+    return info.productsList
   }
 }

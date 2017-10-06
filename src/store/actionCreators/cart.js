@@ -15,3 +15,10 @@ export function getCart(userId) {
     dispatch(actions.getCart(response.data))
   }
 }
+
+export function addToCart(productInfo) {
+  return async (dispatch) => {
+    const response = await cart.addToCart(productInfo)
+    dispatch(actions.getCart(response.data))
+  }
+}

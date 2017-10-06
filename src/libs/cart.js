@@ -5,8 +5,8 @@ export default class Cart {
     return info.cartInfo
   }
 
-  static set(newData) {
-    info.cartInfo = newData
-    return true
+  static addToCart(newProduct) {
+    info.cartInfo.push(newProduct)
+    return info.cartInfo
   }
 }

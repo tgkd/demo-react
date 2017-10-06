@@ -13,3 +13,10 @@ export function saveCart(cartItems) {
     payload: cartItems,
   }
 }
+
+export function addToCart(newCartItem) {
+  return {
+    type: actions.addToCart,
+    payload: newCartItem,
+  }
+}
