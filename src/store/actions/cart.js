@@ -20,3 +20,10 @@ export function addToCart(newCartItem) {
     payload: newCartItem,
   }
 }
+
+export function removeFromCart(itemId) {
+  return {
+    type: actions.removeFromCart,
+    payload: itemId,
+  }
+}

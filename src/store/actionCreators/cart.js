@@ -12,13 +12,20 @@ export function saveCart(cartItems) {
 export function getCart(userId) {
   return async (dispatch) => {
     const response = await cart.get(userId)
-    dispatch(actions.getCart(response.data))
+    dispatch(actions.getCart(response))
   }
 }
 
 export function addToCart(productInfo) {
   return async (dispatch) => {
     const response = await cart.addToCart(productInfo)
-    dispatch(actions.getCart(response.data))
+    dispatch(actions.addToCart(response))
+  }
+}
+
+export function removeFromCart(productId) {
+  return async (dispatch) => {
+    const response = await cart.removeFromCart(productId)
+    dispatch(actions.removeFromCart(response))
   }
 }

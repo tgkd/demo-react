@@ -2,6 +2,7 @@
 import React from 'react'
 import ContactForm from '../ContactForm'
 import Calendar from '../Calendar'
+import CartList from '../CartList'
 import './index.styl'
 
 export default class extends React.Component {
@@ -20,10 +21,9 @@ export default class extends React.Component {
     return (
       <div className="cart-container">
         <h2 className="cart-container__title">Your cart</h2>
-        <Calendar />        
-        <ContactForm onSubmit={this.submitForm} />
+        <CartList items={ this.props.cartItems } removeFromCart={ this.props.removeFromCart } />
+        <ContactForm onSubmit={ this.submitForm } />
       </div>
     )
   }
 }
-        /* <CartList items={this.props.cartItems} /> */

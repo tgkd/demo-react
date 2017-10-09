@@ -7,7 +7,7 @@ import * as actions from '../../store/actionCreators/cart'
 import Cart from '../../components/Cart'
 
 @connect(
-  ({ cartItems }) => ({ cartItems }),
+  ({ cart }) => ({ cart }),
   (dispatch) => bindActionCreators(actions, dispatch),
 )
 class CartContainer extends React.Component {
@@ -16,14 +16,15 @@ class CartContainer extends React.Component {
   }
 
   render() {
-    const { getCartItems, saveCart } = this.props
-    const cartItems = this.props.cartItems
+    const { getCartItems, saveCart, removeFromCart } = this.props
+    const cartItems = this.props.cart
     return (
       <div className="content">
         <Cart
-          getCartItems={getCartItems}
-          savecart={saveCart}
-          cartItems={cartItems}
+          getCartItems={ getCartItems }
+          savecart={ saveCart }
+          cartItems={ cartItems }
+          removeFromCart={ removeFromCart }
         />
       </div>
     )

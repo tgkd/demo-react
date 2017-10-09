@@ -10,10 +10,12 @@ import Sidebar from '../../components/Sidebar'
 
 @connect(
   ({ products }) => ({ products }),
-  (dispatch) => bindActionCreators({ ...productsActions, ...cartActions }, dispatch))
+  dispatch =>
+    bindActionCreators({ ...productsActions, ...cartActions }, dispatch),
+)
 export default class extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -28,7 +30,6 @@ export default class extends Component {
           getProductsList={getProductsList}
         />
       </div>
-    )
+    );
   }
 }
-

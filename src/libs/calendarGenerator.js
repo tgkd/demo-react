@@ -15,4 +15,3 @@ export default function getCalendar(year, month) {
   }
   return calendar
 }
-

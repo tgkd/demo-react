@@ -6,7 +6,27 @@ export default class Cart {
   }
 
   static addToCart(newProduct) {
-    info.cartInfo.push(newProduct)
+    const product = info.productsList.filter((item) => (
+      item.id === newProduct
+    ))
+    info.cartInfo = info.cartInfo.forEach((item) => {
+        if (newProduct === item.id) {
+            
+        }
+      })
+
+    if (product) {
+        if (sameItemInCart.length) {
+            info.cartInfo = []
+        }
+    }
     return info.cartInfo
+  }
+
+  static removeFromCart(productId) {
+    info.cartInfo.filter((item) => (
+      item.id !== productId
+    ))
+    return productId
   }
 }
