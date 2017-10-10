@@ -3,7 +3,7 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
 import './index.styl'
-import ButtonSubmit from '../ButtonSubmit'
+import ButtonSubmit from '../Buttons/ButtonSubmit'
 
 const validate = values => {
   const errors = {}

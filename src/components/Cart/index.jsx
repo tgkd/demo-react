@@ -8,10 +8,9 @@ import './index.styl'
 export default class extends React.Component {
   constructor(props) {
     super(props)
-    this.submitForm = this.submitForm.bind(this)
   }
 
-  submitForm(values) {
+  submitForm = (values) => {
     this.setState({
       data: values,
     })

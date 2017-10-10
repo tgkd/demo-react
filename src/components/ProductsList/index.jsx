@@ -3,8 +3,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './index.styl'
 import Product from '../Product'
-import Button from '../Button/index'
-import ButtonAdd from '../ButtonAdd/index'
+import Button from '../Buttons/Button'
+import ButtonAdd from '../Buttons/ButtonAdd'
 
 class ProductsList extends React.Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class ProductsList extends React.Component {
       productCardStyle: 'cell',
       products: [],
     }
-    this.switchListStyle = this.switchListStyle.bind(this)
   }
 
   componentDidMount() {
@@ -36,11 +35,11 @@ class ProductsList extends React.Component {
     return null
   }
 
-  addToCart(id) {
+  addToCart = (id) => {
     this.props.addToCart(id)
   }
 
-  switchListStyle() {
+  switchListStyle = () => {
     this.setState({
       productCardStyle: this.state.productCardStyle === 'row'
         ? 'cell'

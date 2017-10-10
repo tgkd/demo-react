@@ -16,13 +16,13 @@ class CartContainer extends React.Component {
   }
 
   render() {
-    const { getCartItems, saveCart, removeFromCart } = this.props
+    const { saveCart, removeFromCart } = this.props
     const cartItems = this.props.cart
+    console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>')
+    console.log(cartItems)
     return (
       <div className="content">
         <Cart
-          getCartItems={ getCartItems }
-          savecart={ saveCart }
           cartItems={ cartItems }
           removeFromCart={ removeFromCart }
         />
