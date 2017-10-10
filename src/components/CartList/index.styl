@@ -1,0 +1,26 @@
+$count_color = #01786f
+$remove_color = #c32148
+
+.cart-list
+    display flex
+    flex-direction column
+    max-width 400px
+    margin 30px
+
+    &__item
+        display flex
+        flex-direction row
+        flex-wrap nowrap
+        justify-content space-between
+        align-items center
+
+        &-name
+            display inline-block
+            min-width 200px
+
+        &-count
+            color $count_color
+
+        &-remove
+            color $remove_color
+            cursor pointer
